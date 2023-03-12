@@ -1,0 +1,19 @@
+---
+title: "R语言实现社交网络图的绘制"
+#author: "YanXinying"
+#date: "2022/1/15"
+output: html_document
+---
+<!-- 打工人最近被要求绘制网络图,为此简单学习了igraph和ggraph包,网上大多数教程已经很详尽了,但是发现对自定义节点位置的方法介绍不多,这里补充上这一方法.查阅 -->
+<!-- <!-- 网络数据既包含一般数据包括的节点的特征信息,还具有节点的连接信息.社交网络图可以帮助读者直观地看出网络关系和中心节点等信息,制图时选用合适的节点排布方式可以使网络结构更清晰.R语言中常用的绘制社交网络图的包有很多,比如igraph,ggraph,tinygraph,networkD3等,通常控制节点排布方式时是使用一个layout参数,选择不同的类型,内部会根据这个类型自动计算出一套较好节点排布方案,但这种方式灵活性有限,本文介绍使用ggraph包绘制网络结构图的基本方法和自定义节点的方法. --> -->
+<!-- [ggraph包说明文档](https://cran.r-project.org/web/packages/ggraph/ggraph.pdf),里面有一个函数layout_tbl_graph_manual可以实现自定义节点,但不知道具体什么原因,我调用时提示没有这个函数.于是又参考了如下一个讨论[ggraph network plot: specify node coordinates](https://stackoverflow.com/questions/42048671/ggraph-network-plot-specify-node-coordinates)实现了自定义节点. -->
+
+Network data contains nodes information and edges information, a social network map can help readers visually see information such as network structure and central nodes. There are lots of packages in R can draw a network map, such as igraph, ggraph, tinygraph, networkD3. A good layout can make the structure more clearly, this article introduce a method to custom nodes position in ggraph package. We refer to the following information:[ggraph document](https://cran.r-project.org/web/packages/ggraph/ggraph.pdf),[ggraph network plot: specify node coordinates](https://stackoverflow.com/questions/42048671/ggraph-network-plot-specify-node-coordinates)
+
+
+```{r}
+rm(list=ls())
+setwd('G:/项目/助研')
+library(ggraph)
+dat=data.frame()
+```
